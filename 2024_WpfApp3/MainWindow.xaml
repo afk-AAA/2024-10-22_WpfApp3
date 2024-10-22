@@ -5,25 +5,31 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_2024_WpfApp3"
         mc:Ignorable="d"
-        Title="MainWindow" Height="585" Width="600">
+        Title="飲料點餐系統ver3" Height="585" Width="600" MinWidth="600">
     <Grid>
-        <StackPanel x:Name="stackpanel_DrinkMeun" Margin="10,105,0,0"
-                    HorizontalAlignment="Left" Width="395"
-                    Height="255" VerticalAlignment="Top" Background="#FF98FBE9">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="400*" MinWidth="400"/>
+            <ColumnDefinition Width="203*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="85*" MaxHeight="100" MinHeight="80"/>
+            <RowDefinition Height="300*"/>
+            <RowDefinition Height="185*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel x:Name="stackpanel_DrinkMeun"
+                    Height="299" Background="#FF98FBE9" Grid.Row="1" Margin="10,10,10,10" RenderTransformOrigin="0.5,0.519">
             <RadioButton Content="RadioButton"/>
         </StackPanel>
-        <Button x:Name="OrderButton" Content="確定訂購" 
-                HorizontalAlignment="Left" Margin="425,10,0,0"
+        <Button x:Name="OrderButton" Content="確定訂購" Margin="20,20,20,0"
                 VerticalAlignment="Top" Height="55" Width="110"
-                FontSize="16" FontWeight="Bold" Click="OrderButton_Click"/>
-        <TextBlock x:Name="ResultTextBlock" Margin="10,0,0,10"
-                   TextWrapping="Wrap" VerticalAlignment="Bottom"
-                   HorizontalAlignment="Left" Height="150"
-                   Width="540" Background="#FF8EFF54"
-                   FontSize="16" Padding="5,5,5,5"/>
+                FontSize="16" FontWeight="Bold" Click="OrderButton_Click" Grid.Column="2" Grid.Row="1"/>
+        <TextBlock x:Name="ResultTextBlock" Margin="10,10,10,10"
+                   TextWrapping="Wrap" Background="#FF8EFF54"
+                   FontSize="16" Padding="5,5,5,5" Grid.ColumnSpan="2" Grid.Row="2"/>
         <GroupBox Header="內用/外帶" Margin="15,10,0,0" Background="#FFFDD5D5"
                   Height="55" HorizontalAlignment="Left"
-                  VerticalAlignment="Top" Width="395">
+                  VerticalAlignment="Top" Width="552" Grid.ColumnSpan="2">
             <StackPanel Orientation="Horizontal">
                 <RadioButton Content="內用" FontSize="18"
                              VerticalAlignment="Center"
